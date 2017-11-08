@@ -1,0 +1,42 @@
+<h2>Restaurant List</h2>
+<table>
+  <thead>
+    <tr>
+      <th id="restaurant_name">Name</th>
+      <th id="restaurant_category">Category</th>
+      <th id="restaurant_address">Address</th>
+      <th id="restaurant_phone">Phone</th>
+      <th id="restaurant_view"></th>
+      <th id="restaurant_delete"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.category %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.phone %></td>
+        <td>
+          <%= link_to restaurant_path(restaurant) do%>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to restaurant_path(restaurant), method: :delete, data: { confirm: "Are you sure you want to delete the restaurant?"} do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<div class="link">
+  <%= link_to new_restaurant_path do %>
+    <i class="fa fa-plus" aria-hidden="true"></i> Add New Restaurant
+  <% end %>
+</div>

@@ -1,0 +1,36 @@
+// Index - Table Display
+
+table #restaurant_name {
+  width: 200px;
+}
+
+table #restaurant_category {
+  width: 175px;
+}
+
+table #restaurant_address {
+  width: 425px;
+}
+
+table #restaurant_phone {
+  width: 175px;
+}
+
+table #restaurant_view {
+  width: 40px;
+}
+
+// Restaurants - Show Display
+
+.reviews ul {
+  display: inline;
+  list-style: none;
+}
+
+.reviews #review_content :not(:last-child) {
+  padding-bottom: 15px;
+}
+
+h4 {
+  margin: 10px 0px 0px 0px !important;
+}

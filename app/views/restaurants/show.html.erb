@@ -1,0 +1,43 @@
+<div class="information">
+  <h2><%= @restaurant.name %></h2>
+  <p>
+    <%= @restaurant.category %>
+    <br>
+    <%= @restaurant.address %>
+  </p>
+</div>
+
+<hr>
+
+<div class="reviews">
+  <h4>All Reviews</h4>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+    <!-- Rating -->
+      <li id="review_rating"><strong>Rating:</strong>
+        <% review.rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+      </li>
+      <!-- Comments -->
+      <li id="review_content">
+        <strong>Comment:</strong> <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<hr>
+
+<div class="link">
+  <div>
+    <%= link_to new_restaurant_review_path(@restaurant) do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Add New Review
+    <% end %>
+  </div>
+  <div>
+    <%= link_to restaurants_path do %>
+      <i class="fa fa-undo" aria-hidden="true"></i> Back to List
+    <% end %>
+  </div>
+</div>

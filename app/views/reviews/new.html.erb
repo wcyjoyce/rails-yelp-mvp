@@ -1,0 +1,26 @@
+<h2>Add New Review</h2>
+
+<h3><%= @restaurant.name %></h3>
+
+<div class="new">
+  <%= simple_form_for [@restaurant, @review] do |r| %>
+    <%= r.input :content %>
+    <%= r.input :rating, collection: Review::RATINGS %>
+    <%= r.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="link">
+  <div>
+    <%= link_to restaurant_path(@restaurant) do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Back to Restaurant Details
+    <% end %>
+  </div>
+  <div>
+    <%= link_to restaurants_path do %>
+      <i class="fa fa-undo" aria-hidden="true"></i> Back to Restaurant List
+    <% end %>
+  </div>
+</div>
